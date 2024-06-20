@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اعتذار</title>
+    <!-- رابط إلى خط جوجل: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            color: gold;
+            font-family: 'Cairo', sans-serif;
+            font-size: 24px;
+            direction: rtl;
+            text-align: center;
+            padding: 20px;
+        }
+        #message {
+            border: none;
+            background: transparent;
+            outline: none;
+            color: gold;
+            white-space: pre-line; /* This preserves the line breaks in the text */
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+
+    <script>
+        const message = `يا سمية، يا نور العيون، يا جمال الكون
+أسف من كل قلبي علي خطأ اللسان
+ أحوبك يا نور العيون يا أجمل ما بالكون
+`;
+
+        let index = 0;
+
+        function typeWriter() {
+            if (index < message.length) {
+                document.getElementById("message").innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        window.onload = function() {
+            typeWriter();
+        };
+    </script>
+</body>
+</html>
